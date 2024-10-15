@@ -58,7 +58,7 @@
   position: absolute;
   flex-direction: column;
   justify-content: space-between;
-  background-color: #fff;
+  background-color: var(--dl-color-theme-neutral-dark);
 }
 .navbar-interactive-nav {
   display: flex;
@@ -73,7 +73,8 @@
   justify-content: space-between;
 }
 .navbar-interactive-logo {
-  height: 2rem;
+  width: var(--dl-size-size-large);
+  height: auto;
 }
 .navbar-interactive-close-menu {
   display: flex;
@@ -81,8 +82,9 @@
   justify-content: center;
 }
 .navbar-interactive-icon12 {
-  width: var(--dl-size-size-xsmall);
-  height: var(--dl-size-size-xsmall);
+  fill: #D9D9D9;
+  width: 20px;
+  height: 20px;
 }
 .navbar-interactive-links2 {
   flex: 0 0 auto;
@@ -119,10 +121,14 @@
   margin-left: var(--dl-space-space-twounits);
 }
 .navbar-interactive-text17 {
+  fill: var(--dl-color-theme-neutral-light);
+  color: var(--dl-color-theme-neutral-light);
   display: inline-block;
   margin-bottom: var(--dl-space-space-unit);
 }
 .navbar-interactive-text20 {
+  fill: var(--dl-color-theme-neutral-light);
+  color: var(--dl-color-theme-neutral-light);
   display: inline-block;
   margin-bottom: var(--dl-space-space-unit);
 }
@@ -135,6 +141,8 @@
   display: inline-block;
 }
 .navbar-interactive-text24 {
+  fill: var(--dl-color-theme-neutral-light);
+  color: var(--dl-color-theme-neutral-light);
   display: inline-block;
   margin-bottom: var(--dl-space-space-unit);
 }
@@ -199,5 +207,22 @@
   }
   .navbar-interactive-mobile-menu {
     padding: 16px;
+    background-color: var(--dl-color-theme-neutral-dark);
+  }
+  .navbar-interactive-logo {
+    width: var(--dl-size-size-large);
+    height: auto;
+  }
+  .navbar-interactive-text17 {
+    fill: var(--dl-color-theme-neutral-light);
+    color: var(--dl-color-theme-neutral-light);
+  }
+  .navbar-interactive-text20 {
+    fill: var(--dl-color-theme-neutral-light);
+    color: var(--dl-color-theme-neutral-light);
+  }
+  .navbar-interactive-text24 {
+    fill: var(--dl-color-theme-neutral-light);
+    color: var(--dl-color-theme-neutral-light);
   }
 }

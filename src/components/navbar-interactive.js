@@ -67,7 +67,7 @@ const NavbarInteractive = (props) => {
             <div className="navbar-interactive-top">
               <img
                 alt={props.logoAlt}
-                src={props.logoSrc}
+                src="/daiki%20weather-200h.png"
                 className="navbar-interactive-logo"
               />
               <div
@@ -156,7 +156,6 @@ NavbarInteractive.defaultProps = {
   text: undefined,
   text3: undefined,
   textinputPlaceholder1: 'Search Location',
-  logoSrc: 'https://presentation-website-assets.teleporthq.io/logos/logo.png',
   text2: undefined,
   logoAlt: 'image',
   imageAlt: 'logo',
@@ -171,7 +170,6 @@ NavbarInteractive.propTypes = {
   text: PropTypes.element,
   text3: PropTypes.element,
   textinputPlaceholder1: PropTypes.string,
-  logoSrc: PropTypes.string,
   text2: PropTypes.element,
   logoAlt: PropTypes.string,
   imageAlt: PropTypes.string,
