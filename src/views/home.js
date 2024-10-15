@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
 import { Helmet } from 'react-helmet'
 
+import WeatherContent from '../components/weather-content'
 import './home.css'
 
 const Home = (props) => {
@@ -88,266 +89,331 @@ const Home = (props) => {
       </header>
       <div className="home-layout251 thq-section-padding">
         <div className="home-max-width thq-section-max-width">
-          <div className="home-content10">
-            <div className="home-row1 thq-flex-row">
-              <h1 className="home-text112">
-                <span>Location Name</span>
-                <br></br>
-              </h1>
-              <div className="home-feature11 thq-flex-column">
-                <img
-                  alt="Intuitive Interface Image"
-                  src="https://cdn.weatherapi.com/weather/128x128/day/116.png"
-                  className="home-feature1-image1"
-                />
-                <div className="home-content11">
-                  <h3 className="home-feature2-title1">##°</h3>
-                  <span className="home-feature2-description10 thq-body-small">
-                    <span>Feels Like</span>
-                    <br></br>
-                    <span>##°</span>
-                    <br></br>
-                  </span>
-                </div>
-                <div className="home-content12">
-                  <span className="home-feature2-description11 thq-body-small">
-                    <span>Humidity</span>
-                    <br></br>
-                    <span>##%</span>
-                    <br></br>
-                  </span>
-                  <span className="home-feature2-description12 thq-body-small">
-                    <span>Windchill</span>
-                    <br></br>
-                    <span>##°</span>
-                    <br></br>
-                  </span>
-                </div>
-                <div className="home-content13">
-                  <span className="home-feature2-description13 thq-body-small">
-                    <span>Avg. Wind</span>
-                    <br></br>
-                    <span>DIR # MPH</span>
-                    <br></br>
-                  </span>
-                  <span className="home-feature2-description14 thq-body-small">
-                    <span>Wind Gust</span>
-                    <br></br>
-                    <span>## MPH</span>
-                    <br></br>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="home-content14">
-            <div className="home-row2 thq-flex-row">
-              <h1 className="home-text135">
-                <span>Location Name</span>
-                <br></br>
-              </h1>
-              <div className="home-feature12 thq-flex-column">
-                <img
-                  alt="Intuitive Interface Image"
-                  src="https://cdn.weatherapi.com/weather/128x128/day/116.png"
-                  className="home-feature1-image2"
-                />
-                <div className="home-content15">
-                  <h3 className="home-feature2-title2">##°</h3>
-                  <span className="home-feature2-description15 thq-body-small">
-                    <span>Feels Like</span>
-                    <br></br>
-                    <span>##°</span>
-                    <br></br>
-                  </span>
-                </div>
-                <div className="home-content16">
-                  <span className="home-feature2-description16 thq-body-small">
-                    <span>Humidity</span>
-                    <br></br>
-                    <span>##%</span>
-                    <br></br>
-                  </span>
-                  <span className="home-feature2-description17 thq-body-small">
-                    <span>Windchill</span>
-                    <br></br>
-                    <span>##°</span>
-                    <br></br>
-                  </span>
-                </div>
-                <div className="home-content17">
-                  <span className="home-feature2-description18 thq-body-small">
-                    <span>Avg. Wind</span>
-                    <br></br>
-                    <span>DIR # MPH</span>
-                    <br></br>
-                  </span>
-                  <span className="home-feature2-description19 thq-body-small">
-                    <span>Wind Gust</span>
-                    <br></br>
-                    <span>## MPH</span>
-                    <br></br>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="home-content18">
-            <div className="home-row3 thq-flex-row">
-              <h1 className="home-text158">
-                <span>Location Name</span>
-                <br></br>
-              </h1>
-              <div className="home-feature13 thq-flex-column">
-                <img
-                  alt="Intuitive Interface Image"
-                  src="https://cdn.weatherapi.com/weather/128x128/day/116.png"
-                  className="home-feature1-image3"
-                />
-                <div className="home-content19">
-                  <h3 className="home-feature2-title3">##°</h3>
-                  <span className="home-feature2-description20 thq-body-small">
-                    <span>Feels Like</span>
-                    <br></br>
-                    <span>##°</span>
-                    <br></br>
-                  </span>
-                </div>
-                <div className="home-content20">
-                  <span className="home-feature2-description21 thq-body-small">
-                    <span>Humidity</span>
-                    <br></br>
-                    <span>##%</span>
-                    <br></br>
-                  </span>
-                  <span className="home-feature2-description22 thq-body-small">
-                    <span>Windchill</span>
-                    <br></br>
-                    <span>##°</span>
-                    <br></br>
-                  </span>
-                </div>
-                <div className="home-content21">
-                  <span className="home-feature2-description23 thq-body-small">
-                    <span>Avg. Wind</span>
-                    <br></br>
-                    <span>DIR # MPH</span>
-                    <br></br>
-                  </span>
-                  <span className="home-feature2-description24 thq-body-small">
-                    <span>Wind Gust</span>
-                    <br></br>
-                    <span>## MPH</span>
-                    <br></br>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="home-content22">
-            <div className="home-row4 thq-flex-row">
-              <h1 className="home-text181">
-                <span>Location Name</span>
-                <br></br>
-              </h1>
-              <div className="home-feature14 thq-flex-column">
-                <img
-                  alt="Intuitive Interface Image"
-                  src="https://cdn.weatherapi.com/weather/128x128/day/116.png"
-                  className="home-feature1-image4"
-                />
-                <div className="home-content23">
-                  <h3 className="home-feature2-title4">##°</h3>
-                  <span className="home-feature2-description25 thq-body-small">
-                    <span>Feels Like</span>
-                    <br></br>
-                    <span>##°</span>
-                    <br></br>
-                  </span>
-                </div>
-                <div className="home-content24">
-                  <span className="home-feature2-description26 thq-body-small">
-                    <span>Humidity</span>
-                    <br></br>
-                    <span>##%</span>
-                    <br></br>
-                  </span>
-                  <span className="home-feature2-description27 thq-body-small">
-                    <span>Windchill</span>
-                    <br></br>
-                    <span>##°</span>
-                    <br></br>
-                  </span>
-                </div>
-                <div className="home-content25">
-                  <span className="home-feature2-description28 thq-body-small">
-                    <span>Avg. Wind</span>
-                    <br></br>
-                    <span>DIR # MPH</span>
-                    <br></br>
-                  </span>
-                  <span className="home-feature2-description29 thq-body-small">
-                    <span>Wind Gust</span>
-                    <br></br>
-                    <span>## MPH</span>
-                    <br></br>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="home-content26">
-            <div className="home-row5 thq-flex-row">
-              <h1 className="home-text204">
-                <span>Location Name</span>
-                <br></br>
-              </h1>
-              <div className="home-feature15 thq-flex-column">
-                <img
-                  alt="Intuitive Interface Image"
-                  src="https://cdn.weatherapi.com/weather/128x128/day/116.png"
-                  className="home-feature1-image5"
-                />
-                <div className="home-content27">
-                  <h3 className="home-feature2-title5">##°</h3>
-                  <span className="home-feature2-description30 thq-body-small">
-                    <span>Feels Like</span>
-                    <br></br>
-                    <span>##°</span>
-                    <br></br>
-                  </span>
-                </div>
-                <div className="home-content28">
-                  <span className="home-feature2-description31 thq-body-small">
-                    <span>Humidity</span>
-                    <br></br>
-                    <span>##%</span>
-                    <br></br>
-                  </span>
-                  <span className="home-feature2-description32 thq-body-small">
-                    <span>Windchill</span>
-                    <br></br>
-                    <span>##°</span>
-                    <br></br>
-                  </span>
-                </div>
-                <div className="home-content29">
-                  <span className="home-feature2-description33 thq-body-small">
-                    <span>Avg. Wind</span>
-                    <br></br>
-                    <span>DIR # MPH</span>
-                    <br></br>
-                  </span>
-                  <span className="home-feature2-description34 thq-body-small">
-                    <span>Wind Gust</span>
-                    <br></br>
-                    <span>## MPH</span>
-                    <br></br>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
+          <WeatherContent
+            heading={
+              <Fragment>
+                <span className="home-text112">
+                  <span>Location Name</span>
+                  <br></br>
+                </span>
+              </Fragment>
+            }
+            feature2Title={
+              <Fragment>
+                <span className="home-text115">##°</span>
+              </Fragment>
+            }
+            feature2Description={
+              <Fragment>
+                <span className="home-feature2-description10 thq-body-small">
+                  <span>Feels Like</span>
+                  <br></br>
+                  <span>##°</span>
+                  <br></br>
+                </span>
+              </Fragment>
+            }
+            feature2Description1={
+              <Fragment>
+                <span className="home-feature2-description11 thq-body-small">
+                  <span>Humidity</span>
+                  <br></br>
+                  <span>##%</span>
+                  <br></br>
+                </span>
+              </Fragment>
+            }
+            feature2Description2={
+              <Fragment>
+                <span className="home-feature2-description12 thq-body-small">
+                  <span>Windchill</span>
+                  <br></br>
+                  <span>##°</span>
+                  <br></br>
+                </span>
+              </Fragment>
+            }
+            feature2Description3={
+              <Fragment>
+                <span className="home-feature2-description13 thq-body-small">
+                  <span>Avg. Wind</span>
+                  <br></br>
+                  <span>DIR # MPH</span>
+                  <br></br>
+                </span>
+              </Fragment>
+            }
+            feature2Description4={
+              <Fragment>
+                <span className="home-feature2-description14 thq-body-small">
+                  <span>Wind Gust</span>
+                  <br></br>
+                  <span>## MPH</span>
+                  <br></br>
+                </span>
+              </Fragment>
+            }
+          ></WeatherContent>
+          <WeatherContent
+            heading={
+              <Fragment>
+                <span className="home-text136">
+                  <span>Location Name</span>
+                  <br></br>
+                </span>
+              </Fragment>
+            }
+            feature2Title={
+              <Fragment>
+                <span className="home-text139">##°</span>
+              </Fragment>
+            }
+            feature2Description={
+              <Fragment>
+                <span className="home-feature2-description15 thq-body-small">
+                  <span>Feels Like</span>
+                  <br></br>
+                  <span>##°</span>
+                  <br></br>
+                </span>
+              </Fragment>
+            }
+            feature2Description1={
+              <Fragment>
+                <span className="home-feature2-description16 thq-body-small">
+                  <span>Humidity</span>
+                  <br></br>
+                  <span>##%</span>
+                  <br></br>
+                </span>
+              </Fragment>
+            }
+            feature2Description2={
+              <Fragment>
+                <span className="home-feature2-description17 thq-body-small">
+                  <span>Windchill</span>
+                  <br></br>
+                  <span>##°</span>
+                  <br></br>
+                </span>
+              </Fragment>
+            }
+            feature2Description3={
+              <Fragment>
+                <span className="home-feature2-description18 thq-body-small">
+                  <span>Avg. Wind</span>
+                  <br></br>
+                  <span>DIR # MPH</span>
+                  <br></br>
+                </span>
+              </Fragment>
+            }
+            feature2Description4={
+              <Fragment>
+                <span className="home-feature2-description19 thq-body-small">
+                  <span>Wind Gust</span>
+                  <br></br>
+                  <span>## MPH</span>
+                  <br></br>
+                </span>
+              </Fragment>
+            }
+          ></WeatherContent>
+          <WeatherContent
+            heading={
+              <Fragment>
+                <span className="home-text160">
+                  <span>Location Name</span>
+                  <br></br>
+                </span>
+              </Fragment>
+            }
+            feature2Title={
+              <Fragment>
+                <span className="home-text163">##°</span>
+              </Fragment>
+            }
+            feature2Description={
+              <Fragment>
+                <span className="home-feature2-description20 thq-body-small">
+                  <span>Feels Like</span>
+                  <br></br>
+                  <span>##°</span>
+                  <br></br>
+                </span>
+              </Fragment>
+            }
+            feature2Description1={
+              <Fragment>
+                <span className="home-feature2-description21 thq-body-small">
+                  <span>Humidity</span>
+                  <br></br>
+                  <span>##%</span>
+                  <br></br>
+                </span>
+              </Fragment>
+            }
+            feature2Description2={
+              <Fragment>
+                <span className="home-feature2-description22 thq-body-small">
+                  <span>Windchill</span>
+                  <br></br>
+                  <span>##°</span>
+                  <br></br>
+                </span>
+              </Fragment>
+            }
+            feature2Description3={
+              <Fragment>
+                <span className="home-feature2-description23 thq-body-small">
+                  <span>Avg. Wind</span>
+                  <br></br>
+                  <span>DIR # MPH</span>
+                  <br></br>
+                </span>
+              </Fragment>
+            }
+            feature2Description4={
+              <Fragment>
+                <span className="home-feature2-description24 thq-body-small">
+                  <span>Wind Gust</span>
+                  <br></br>
+                  <span>## MPH</span>
+                  <br></br>
+                </span>
+              </Fragment>
+            }
+          ></WeatherContent>
+          <WeatherContent
+            heading={
+              <Fragment>
+                <span className="home-text184">
+                  <span>Location Name</span>
+                  <br></br>
+                </span>
+              </Fragment>
+            }
+            feature2Title={
+              <Fragment>
+                <span className="home-text187">##°</span>
+              </Fragment>
+            }
+            feature2Description={
+              <Fragment>
+                <span className="home-feature2-description25 thq-body-small">
+                  <span>Feels Like</span>
+                  <br></br>
+                  <span>##°</span>
+                  <br></br>
+                </span>
+              </Fragment>
+            }
+            feature2Description1={
+              <Fragment>
+                <span className="home-feature2-description26 thq-body-small">
+                  <span>Humidity</span>
+                  <br></br>
+                  <span>##%</span>
+                  <br></br>
+                </span>
+              </Fragment>
+            }
+            feature2Description2={
+              <Fragment>
+                <span className="home-feature2-description27 thq-body-small">
+                  <span>Windchill</span>
+                  <br></br>
+                  <span>##°</span>
+                  <br></br>
+                </span>
+              </Fragment>
+            }
+            feature2Description3={
+              <Fragment>
+                <span className="home-feature2-description28 thq-body-small">
+                  <span>Avg. Wind</span>
+                  <br></br>
+                  <span>DIR # MPH</span>
+                  <br></br>
+                </span>
+              </Fragment>
+            }
+            feature2Description4={
+              <Fragment>
+                <span className="home-feature2-description29 thq-body-small">
+                  <span>Wind Gust</span>
+                  <br></br>
+                  <span>## MPH</span>
+                  <br></br>
+                </span>
+              </Fragment>
+            }
+          ></WeatherContent>
+          <WeatherContent
+            heading={
+              <Fragment>
+                <span className="home-text208">
+                  <span>Location Name</span>
+                  <br></br>
+                </span>
+              </Fragment>
+            }
+            feature2Title={
+              <Fragment>
+                <span className="home-text211">##°</span>
+              </Fragment>
+            }
+            feature2Description={
+              <Fragment>
+                <span className="home-feature2-description30 thq-body-small">
+                  <span>Feels Like</span>
+                  <br></br>
+                  <span>##°</span>
+                  <br></br>
+                </span>
+              </Fragment>
+            }
+            feature2Description1={
+              <Fragment>
+                <span className="home-feature2-description31 thq-body-small">
+                  <span>Humidity</span>
+                  <br></br>
+                  <span>##%</span>
+                  <br></br>
+                </span>
+              </Fragment>
+            }
+            feature2Description2={
+              <Fragment>
+                <span className="home-feature2-description32 thq-body-small">
+                  <span>Windchill</span>
+                  <br></br>
+                  <span>##°</span>
+                  <br></br>
+                </span>
+              </Fragment>
+            }
+            feature2Description3={
+              <Fragment>
+                <span className="home-feature2-description33 thq-body-small">
+                  <span>Avg. Wind</span>
+                  <br></br>
+                  <span>DIR # MPH</span>
+                  <br></br>
+                </span>
+              </Fragment>
+            }
+            feature2Description4={
+              <Fragment>
+                <span className="home-feature2-description34 thq-body-small">
+                  <span>Wind Gust</span>
+                  <br></br>
+                  <span>## MPH</span>
+                  <br></br>
+                </span>
+              </Fragment>
+            }
+          ></WeatherContent>
         </div>
       </div>
     </div>
