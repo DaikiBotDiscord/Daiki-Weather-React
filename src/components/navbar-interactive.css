@@ -116,36 +116,36 @@
   fill: var(--dl-color-theme-neutral-light);
   color: var(--dl-color-theme-neutral-light);
   display: inline-block;
+  margin-left: var(--dl-space-space-twounits);
 }
 .navbar-interactive-text17 {
-  fill: var(--dl-color-theme-neutral-light);
-  color: var(--dl-color-theme-neutral-light);
-  display: inline-block;
-  margin-left: var(--dl-space-space-twounits);
-}
-.navbar-interactive-text18 {
-  fill: var(--dl-color-theme-neutral-light);
-  color: var(--dl-color-theme-neutral-light);
-  display: inline-block;
-  margin-left: var(--dl-space-space-twounits);
-}
-.navbar-interactive-text19 {
   display: inline-block;
   margin-bottom: var(--dl-space-space-unit);
 }
 .navbar-interactive-text20 {
+  display: inline-block;
   margin-bottom: var(--dl-space-space-unit);
 }
-.navbar-interactive-text22 {
+.navbar-interactive-text21 {
+  margin-bottom: var(--dl-space-space-unit);
+}
+.navbar-interactive-text23 {
+  fill: var(--dl-color-theme-neutral-light);
+  color: var(--dl-color-theme-neutral-light);
+  display: inline-block;
+}
+.navbar-interactive-text24 {
   display: inline-block;
   margin-bottom: var(--dl-space-space-unit);
 }
 .navbar-interactive-text25 {
-  display: inline-block;
   margin-bottom: var(--dl-space-space-unit);
 }
-.navbar-interactive-text26 {
-  margin-bottom: var(--dl-space-space-unit);
+.navbar-interactive-text27 {
+  fill: var(--dl-color-theme-neutral-light);
+  color: var(--dl-color-theme-neutral-light);
+  display: inline-block;
+  margin-left: var(--dl-space-space-twounits);
 }
 @media(max-width: 767px) {
   .navbar-interactive-navbar-interactive {
@@ -174,22 +174,22 @@
     margin-left: 0;
     margin-bottom: var(--dl-space-space-unit);
   }
-  .navbar-interactive-text19 {
+  .navbar-interactive-text17 {
+    margin-left: 0;
     margin-bottom: var(--dl-space-space-unit);
   }
   .navbar-interactive-text20 {
+    margin-left: 0;
     margin-bottom: var(--dl-space-space-unit);
   }
-  .navbar-interactive-text22 {
+  .navbar-interactive-text21 {
     margin-left: 0;
+    margin-bottom: var(--dl-space-space-unit);
+  }
+  .navbar-interactive-text24 {
     margin-bottom: var(--dl-space-space-unit);
   }
   .navbar-interactive-text25 {
-    margin-left: 0;
-    margin-bottom: var(--dl-space-space-unit);
-  }
-  .navbar-interactive-text26 {
-    margin-left: 0;
     margin-bottom: var(--dl-space-space-unit);
   }
 }
