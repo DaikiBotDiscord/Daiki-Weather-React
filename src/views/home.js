@@ -78,11 +78,11 @@ const Home = () => {
               heading={<span className='home-text112'>{weatherData.location.name}</span>}
               feature1ImageSrc={`https:${weatherData.current.condition.icon}`}
               feature2Title={<span className='home-text115'>{Math.round(weatherData.current.temp_f)}°</span>}
-              feature2Description={<span className='home-feature2-description10 thq-body-small'>Feels Like {Math.round(weatherData.current.feelslike_f)}°</span>}
-              feature2Description8={<span className='home-feature2-description11 thq-body-small'>Humidity {weatherData.current.humidity}%</span>}
-              feature2Description81={<span className='home-feature2-description12 thq-body-small'>Windchill {Math.round(weatherData.current.windchill_f)}°</span>}
-              feature2Description82={<span className='home-feature2-description13 thq-body-small'>Avg. Wind {weatherData.current.wind_dir} {weatherData.current.wind_mph} MPH</span>}
-              feature2Description811={<span className='home-feature2-description14 thq-body-small'>Wind Gust {weatherData.current.gust_mph} MPH</span>}
+              feature2Description={<span className='home-feature2-description10 thq-body-small'>Feels Like <br />{Math.round(weatherData.current.feelslike_f)}°</span>}
+              feature2Description8={<span className='home-feature2-description11 thq-body-small'>Humidity <br />{weatherData.current.humidity}%</span>}
+              feature2Description81={<span className='home-feature2-description12 thq-body-small'>Windchill <br />{Math.round(weatherData.current.windchill_f)}°</span>}
+              feature2Description82={<span className='home-feature2-description13 thq-body-small'>Avg. Wind <br />{weatherData.current.wind_dir} {weatherData.current.wind_mph} MPH</span>}
+              feature2Description811={<span className='home-feature2-description14 thq-body-small'>Wind Gust <br />{weatherData.current.gust_mph} MPH</span>}
             />
           )}
         </div>
