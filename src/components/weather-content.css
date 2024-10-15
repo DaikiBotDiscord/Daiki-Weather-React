@@ -39,11 +39,13 @@
   align-items: flex-start;
   margin-left: var(--dl-space-space-halfunit);
   margin-right: var(--dl-space-space-halfunit);
+  flex-direction: column;
 }
 .weather-content-content3 {
   align-items: flex-start;
   margin-left: var(--dl-space-space-halfunit);
   margin-right: var(--dl-space-space-halfunit);
+  flex-direction: column;
 }
 .weather-content-text11 {
   fill: var(--dl-color-theme-secondary1);
