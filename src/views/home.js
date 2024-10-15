@@ -1,130 +1,89 @@
-import React, { useState, useEffect, Fragment } from 'react';
-import { Helmet } from 'react-helmet';
-import NavbarInteractive from '../components/navbar-interactive'
+import React, { useState, useEffect } from 'react';
+import { useLocation, useHistory } from 'react-router-dom';
 import WeatherContent from '../components/weather-content';
-import './home.css';
-
-const predefinedLocations = [
-  'New York, NY',
-  'Los Angeles, CA',
-  'Chicago, IL',
-  'Houston, TX',
-  'Phoenix, AZ'
-];
+import NavBar from '../components/navbar-interactive'; // Re-use your existing NavBar component
+import './home.css'; // Keep your existing CSS
 
 const Home = () => {
-  const [weatherData, setWeatherData] = useState([]); // Stores weather data for multiple locations
+  const [location, setLocation] = useState(''); // Location state for search input
+  const [weatherData, setWeatherData] = useState(null); // Weather data state
+  const [loading, setLoading] = useState(false); // Loading state
+  const [error, setError] = useState(null); // Error state
+  const [hasSearched, setHasSearched] = useState(false); // Track if the user has searched
+
+  const urlLocation = useLocation(); // Get current URL info
+  const history = useHistory(); // To manage URL navigation
 
   // Function to fetch weather data for a specific location
   const fetchWeatherData = async (loc) => {
+    setLoading(true);
+    setError(null);
     try {
       const response = await fetch(
         `https://api.weather.daiki-bot.xyz/api/forcast/current?location=${encodeURIComponent(loc)}`
       );
       const data = await response.json();
-      return data;
-    } catch (error) {
-      console.error('Error fetching weather data:', error);
-      return null;
+      if (data.error) {
+        throw new Error(data.error.message);
+      }
+      setWeatherData(data);
+      setHasSearched(true); // Mark that the user has searched
+    } catch (err) {
+      setError(err.message);
+      setWeatherData(null);
+    } finally {
+      setLoading(false);
     }
   };
 
-  // Fetch weather data for all predefined locations when component mounts
+  // Function to handle URL query parameter for location
   useEffect(() => {
-    const loadWeatherData = async () => {
-      const allWeatherData = await Promise.all(
-        predefinedLocations.map(async (location) => {
-          const data = await fetchWeatherData(location);
-          return data;
-        })
-      );
-      setWeatherData(allWeatherData.filter((data) => data !== null)); // Add only valid data
-    };
+    const queryParams = new URLSearchParams(urlLocation.search);
+    const locationParam = queryParams.get('location');
+    if (locationParam) {
+      setLocation(locationParam); // Set the input based on the URL parameter
+      fetchWeatherData(locationParam); // Fetch weather data for the URL location
+      setHasSearched(true); // Mark that the user has searched
+    }
+  }, [urlLocation.search]); // Trigger on URL change
 
-    loadWeatherData();
-  }, []);
+  // Handle search form submission from the NavBar
+  const handleSearch = (searchLocation) => {
+    if (searchLocation) {
+      setLocation(searchLocation);
+      // Update the URL with the new location
+      history.push(`?location=${encodeURIComponent(searchLocation)}`);
+      fetchWeatherData(searchLocation); // Fetch weather data
+    }
+  };
 
   return (
     <div className="home-container">
-      <Helmet>
-        <title>Daiki Weather</title>
-        <meta property="og:title" content="Daiki Weather" />
-        <meta name="robots" content="noindex" />
-      </Helmet>
-      <NavbarInteractive />
-      <div className="home-layout251 thq-section-padding">
-        <div className="home-max-width thq-section-max-width">
-          {weatherData.length === 0 ? (
-            <div>Loading weather data...</div>
-          ) : (
-            weatherData.map((data, index) => (
-              <WeatherContent
-                key={index}
-                heading={
-                  <Fragment>
-                    <span className="home-text112">
-                      <span>{data.location.name}</span>
-                      <br />
-                    </span>
-                  </Fragment>
-                }
-                feature1ImageSrc={`https:${data.current.condition.icon}`} // Dynamic weather icon
-                feature2Title={
-                  <Fragment>
-                    <span className="home-text115">{Math.round(data.current.temp_f)}°</span>
-                  </Fragment>
-                }
-                feature2Description={
-                  <Fragment>
-                    <span className="home-feature2-description10 thq-body-small">
-                      <span>Feels Like</span>
-                      <br />
-                      <span>{Math.round(data.current.feelslike_f)}°</span>
-                      <br />
-                    </span>
-                  </Fragment>
-                }
-                feature2Description8={
-                  <Fragment>
-                    <span className="home-feature2-description11 thq-body-small">
-                      <span>Humidity</span>
-                      <br />
-                      <span>{data.current.humidity}%</span>
-                    </span>
-                  </Fragment>
-                }
-                feature2Description81={
-                  <Fragment>
-                    <span className="home-feature2-description12 thq-body-small">
-                      <span>Windchill</span>
-                      <br />
-                      <span>{Math.round(data.current.windchill_f)}°</span>
-                      <br />
-                    </span>
-                  </Fragment>
-                }
-                feature2Description82={
-                  <Fragment>
-                    <span className="home-feature2-description13 thq-body-small">
-                      <span>Avg. Wind</span>
-                      <br />
-                      <span>{data.current.wind_dir} {data.current.wind_mph} MPH</span>
-                      <br />
-                    </span>
-                  </Fragment>
-                }
-                feature2Description811={
-                  <Fragment>
-                    <span className="home-feature2-description14 thq-body-small">
-                      <span>Wind Gust</span>
-                      <br />
-                      <span>{data.current.gust_mph} MPH</span>
-                      <br />
-                    </span>
-                  </Fragment>
-                }
-              />
-            ))
+      {/* Use your existing NavBar and pass the handleSearch function */}
+      <NavBar onSearch={handleSearch} />
+
+      <div className="home-layout251">
+        <div className="home-max-width">
+          {loading && <div>Loading...</div>}
+          {error && <div className="error">{error}</div>}
+
+          {!hasSearched && (
+            <div className="no-search-message" style={{ color: 'white' }}>
+              <h2>Please use the search bar to view current weather data.</h2>
+            </div>
+          )}
+
+          {hasSearched && weatherData && (
+            <WeatherContent
+              heading={<span className='home-text112'>{weatherData.location.name}</span>}
+              feature1ImageSrc={`https:${weatherData.current.condition.icon}`}
+              feature2Title={<span className='home-text115'>{Math.round(weatherData.current.temp_f)}°</span>}
+              feature2Description={<span className='home-feature2-description10 thq-body-small'>Feels Like {Math.round(weatherData.current.feelslike_f)}°</span>}
+              feature2Description8={<span className='home-feature2-description11 thq-body-small'>Humidity {weatherData.current.humidity}%</span>}
+              feature2Description81={<span className='home-feature2-description12 thq-body-small'>Windchill {Math.round(weatherData.current.windchill_f)}°</span>}
+              feature2Description82={<span className='home-feature2-description13 thq-body-small'>Avg. Wind {weatherData.current.wind_dir} {weatherData.current.wind_mph} MPH</span>}
+              feature2Description811={<span className='home-feature2-description14 thq-body-small'>Wind Gust {weatherData.current.gust_mph} MPH</span>}
+            />
           )}
         </div>
       </div>
