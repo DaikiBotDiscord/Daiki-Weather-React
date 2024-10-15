@@ -24,78 +24,80 @@ const WeatherContent = (props) => {
             src={props.feature1ImageSrc}
             className="weather-content-feature1-image"
           />
-          <div className="weather-content-content1">
-            <h3>
-              {props.feature2Title ?? (
-                <Fragment>
-                  <h3 className="weather-content-text22">##°</h3>
-                </Fragment>
-              )}
-            </h3>
-            <span>
-              {props.feature2Description ?? (
-                <Fragment>
-                  <span className="weather-content-feature2-description18 thq-body-small">
-                    <span>Feels Like</span>
-                    <br></br>
-                    <span>##°</span>
-                    <br></br>
-                  </span>
-                </Fragment>
-              )}
-            </span>
-          </div>
-          <div className="weather-content-content2">
-            <span>
-              {props.feature2Description1 ?? (
-                <Fragment>
-                  <span className="weather-content-feature2-description16">
-                    <span>Humidity</span>
-                    <br></br>
-                    <span>##%</span>
-                    <br></br>
-                  </span>
-                </Fragment>
-              )}
-            </span>
-            <span>
-              {props.feature2Description2 ?? (
-                <Fragment>
-                  <span className="weather-content-feature2-description15">
-                    <span>Windchill</span>
-                    <br></br>
-                    <span>##°</span>
-                    <br></br>
-                  </span>
-                </Fragment>
-              )}
-            </span>
-          </div>
-          <div className="weather-content-content3">
-            <span>
-              {props.feature2Description3 ?? (
-                <Fragment>
-                  <span className="weather-content-feature2-description19">
-                    <span>Avg. Wind</span>
-                    <br></br>
-                    <span>DIR # MPH</span>
-                    <br></br>
-                  </span>
-                </Fragment>
-              )}
-            </span>
-            <span>
-              {props.feature2Description4 ?? (
-                <Fragment>
-                  <span className="weather-content-feature2-description17">
-                    <span>Wind Gust</span>
-                    <br></br>
-                    <span>## MPH</span>
-                    <br></br>
-                  </span>
-                </Fragment>
-              )}
-            </span>
+          <div className="weather-content-container">
+            <div className="weather-content-content1">
+              <h3>
+                {props.feature2Title ?? (
+                  <Fragment>
+                    <h3 className="weather-content-text22">##°</h3>
+                  </Fragment>
+                )}
+              </h3>
+              <span>
+                {props.feature2Description ?? (
+                  <Fragment>
+                    <span className="weather-content-feature2-description18 thq-body-small">
+                      <span>Feels Like</span>
+                      <br></br>
+                      <span>##°</span>
+                      <br></br>
+                    </span>
+                  </Fragment>
+                )}
+              </span>
+            </div>
+            <div className="weather-content-content2">
+              <span>
+                {props.feature2Description1 ?? (
+                  <Fragment>
+                    <span className="weather-content-feature2-description16">
+                      <span>Humidity</span>
+                      <br></br>
+                      <span>##%</span>
+                      <br></br>
+                    </span>
+                  </Fragment>
+                )}
+              </span>
+              <span>
+                {props.feature2Description2 ?? (
+                  <Fragment>
+                    <span className="weather-content-feature2-description15">
+                      <span>Windchill</span>
+                      <br></br>
+                      <span>##°</span>
+                      <br></br>
+                    </span>
+                  </Fragment>
+                )}
+              </span>
+            </div>
+            <div className="weather-content-content3">
+              <span>
+                {props.feature2Description3 ?? (
+                  <Fragment>
+                    <span className="weather-content-feature2-description19">
+                      <span>Avg. Wind</span>
+                      <br></br>
+                      <span>DIR # MPH</span>
+                      <br></br>
+                    </span>
+                  </Fragment>
+                )}
+              </span>
+              <span>
+                {props.feature2Description4 ?? (
+                  <Fragment>
+                    <span className="weather-content-feature2-description17">
+                      <span>Wind Gust</span>
+                      <br></br>
+                      <span>## MPH</span>
+                      <br></br>
+                    </span>
+                  </Fragment>
+                )}
+              </span>
+            </div>
           </div>
         </div>
       </div>

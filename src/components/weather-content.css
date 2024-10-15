@@ -20,15 +20,30 @@
 .weather-content-feature1-image {
   width: var(--dl-size-size-medium);
 }
+.weather-content-container {
+  flex: 0 0 auto;
+  width: auto;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
 .weather-content-content1 {
   align-items: flex-start;
+  margin-left: var(--dl-space-space-halfunit);
+  margin-right: var(--dl-space-space-halfunit);
 }
 .weather-content-content2 {
   height: auto;
   align-items: flex-start;
+  margin-left: var(--dl-space-space-halfunit);
+  margin-right: var(--dl-space-space-halfunit);
 }
 .weather-content-content3 {
   align-items: flex-start;
+  margin-left: var(--dl-space-space-halfunit);
+  margin-right: var(--dl-space-space-halfunit);
 }
 .weather-content-feature2-description15 {
   color: var(--dl-color-theme-neutral-light);
