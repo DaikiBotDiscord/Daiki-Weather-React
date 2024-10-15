@@ -10,6 +10,7 @@ const Home = (props) => {
       <Helmet>
         <title>Daiki Weather</title>
         <meta property="og:title" content="Daiki Weather" />
+        <meta name="robots" content="noindex" />
       </Helmet>
       <header data-thq="thq-navbar" className="home-navbar-interactive">
         <img
