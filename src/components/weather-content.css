@@ -24,6 +24,7 @@
   align-items: flex-start;
 }
 .weather-content-content2 {
+  height: auto;
   align-items: flex-start;
 }
 .weather-content-content3 {
@@ -32,6 +33,7 @@
 .weather-content-feature2-description15 {
   color: var(--dl-color-theme-neutral-light);
   display: inline-block;
+  line-height: 1.5;
 }
 .weather-content-text15 {
   fill: var(--dl-color-theme-secondary1);
@@ -50,6 +52,7 @@
 .weather-content-feature2-description17 {
   color: var(--dl-color-theme-neutral-light);
   display: inline-block;
+  line-height: 1.5;
 }
 .weather-content-feature2-description18 {
   color: var(--dl-color-theme-neutral-light);

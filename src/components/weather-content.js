@@ -49,7 +49,7 @@ const WeatherContent = (props) => {
             <span>
               {props.feature2Description1 ?? (
                 <Fragment>
-                  <span className="weather-content-feature2-description16 thq-body-small">
+                  <span className="weather-content-feature2-description16">
                     <span>Humidity</span>
                     <br></br>
                     <span>##%</span>
@@ -61,7 +61,7 @@ const WeatherContent = (props) => {
             <span>
               {props.feature2Description2 ?? (
                 <Fragment>
-                  <span className="weather-content-feature2-description15 thq-body-small">
+                  <span className="weather-content-feature2-description15">
                     <span>Windchill</span>
                     <br></br>
                     <span>##°</span>
@@ -75,7 +75,7 @@ const WeatherContent = (props) => {
             <span>
               {props.feature2Description3 ?? (
                 <Fragment>
-                  <span className="weather-content-feature2-description19 thq-body-small">
+                  <span className="weather-content-feature2-description19">
                     <span>Avg. Wind</span>
                     <br></br>
                     <span>DIR # MPH</span>
@@ -87,7 +87,7 @@ const WeatherContent = (props) => {
             <span>
               {props.feature2Description4 ?? (
                 <Fragment>
-                  <span className="weather-content-feature2-description17 thq-body-small">
+                  <span className="weather-content-feature2-description17">
                     <span>Wind Gust</span>
                     <br></br>
                     <span>## MPH</span>
