@@ -64,11 +64,11 @@ const Home = () => {
 
       <div className="home-layout251">
         <div className="home-max-width">
-          {loading && <div>Loading...</div>}
+          {loading && <div style={{ color: 'white' }}>Loading...</div>}
           {error && <div className="error">{error}</div>}
 
           {!hasSearched && (
-            <div className="no-search-message" style={{ color: 'white' }}>
+            <div className="no-search-message" style={{ color: 'white', textAlign: 'center' }}>
               <h2>Please use the search bar to view current weather data.</h2>
             </div>
           )}

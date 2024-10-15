@@ -6,6 +6,7 @@
   align-items: flex-start;
   flex-direction: row;
 }
+
 .weather-content-row {
   width: 100%;
   height: auto;
@@ -13,13 +14,16 @@
   align-items: center;
   flex-direction: column;
 }
+
 .weather-content-feature1 {
   flex: 1;
   flex-direction: row;
 }
+
 .weather-content-feature1-image {
   width: var(--dl-size-size-medium);
 }
+
 .weather-content-container1 {
   flex: 0 0 auto;
   width: auto;
@@ -30,11 +34,13 @@
   flex-direction: row;
   justify-content: center;
 }
+
 .weather-content-content {
   align-items: flex-start;
   margin-left: var(--dl-space-space-halfunit);
   margin-right: var(--dl-space-space-halfunit);
 }
+
 .weather-content-container2 {
   flex: 0 0 auto;
   width: auto;
@@ -44,6 +50,7 @@
   margin-right: var(--dl-space-space-unit);
   flex-direction: column;
 }
+
 .weather-content-container3 {
   flex: 0 0 auto;
   width: auto;
@@ -52,52 +59,65 @@
   align-items: flex-start;
   flex-direction: column;
 }
+
 .weather-content-feature2-description15 {
   color: var(--dl-color-theme-neutral-light);
   display: inline-block;
 }
+
 .weather-content-feature2-description16 {
   color: var(--dl-color-theme-neutral-light);
   display: inline-block;
 }
+
 .weather-content-text15 {
   color: var(--dl-color-theme-neutral-light);
 }
+
 .weather-content-feature2-description17 {
   color: var(--dl-color-theme-neutral-light);
   display: inline-block;
 }
+
 .weather-content-text22 {
   fill: var(--dl-color-theme-secondary1);
   color: var(--dl-color-theme-secondary1);
   display: inline-block;
 }
+
 .weather-content-text25 {
   color: rgb(255, 255, 255);
   display: inline-block;
   font-size: 3.5rem;
 }
+
 .weather-content-feature2-description18 {
   color: var(--dl-color-theme-neutral-light);
   display: inline-block;
 }
+
 .weather-content-feature2-description19 {
   color: var(--dl-color-theme-neutral-light);
   display: inline-block;
 }
+
 @media(max-width: 991px) {
   .weather-content-feature1-image {
-    height: 260px;
+    height: auto;
   }
 }
+
 @media(max-width: 767px) {
   .weather-content-row {
     flex-direction: column;
   }
+
   .weather-content-feature1-image {
-    width: 100%;
+    width: var(--dl-size-size-medium);
+    height: auto;
   }
 }
+
 @media(max-width: 479px) {
   .weather-content-feature1-image {
     width: var(--dl-size-size-medium);
