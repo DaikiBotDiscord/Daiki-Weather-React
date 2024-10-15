@@ -55,8 +55,8 @@
 }
 
 .navbar-interactive-icon10 {
-  width: var(--dl-size-size-xsmall);
-  height: var(--dl-size-size-xsmall);
+  width: 25px;
+  height: 25px;
 }
 
 .navbar-interactive-mobile-menu {
@@ -100,8 +100,8 @@
 
 .navbar-interactive-icon12 {
   fill: #D9D9D9;
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
 }
 
 .navbar-interactive-links2 {
