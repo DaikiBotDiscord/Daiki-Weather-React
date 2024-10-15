@@ -1,10 +1,19 @@
-import React, { Fragment } from 'react'
-
-import PropTypes from 'prop-types'
-
-import './navbar-interactive.css'
+import React, { useState, Fragment } from 'react';
+import PropTypes from 'prop-types';
+import './navbar-interactive.css';
 
 const NavbarInteractive = (props) => {
+  const [searchInput, setSearchInput] = useState('');
+
+  // Handle the form submission
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    if (searchInput.trim() && props.onSearch) {
+      props.onSearch(searchInput);
+    }
+  };
+
+
   return (
     <div className="navbar-interactive-container">
       <header
@@ -44,11 +53,15 @@ const NavbarInteractive = (props) => {
             </span>
           </nav>
           <div className="navbar-interactive-buttons1">
-            <input
-              type="text"
-              placeholder={props.textinputPlaceholder}
-              className="input"
-            />
+            <form onSubmit={handleSearchSubmit}>
+              <input
+                type="text"
+                placeholder={props.textinputPlaceholder}
+                className="input"
+                value={searchInput}
+                onChange={(e) => setSearchInput(e.target.value)}
+              />
+            </form>
           </div>
         </div>
         <div
@@ -115,11 +128,15 @@ const NavbarInteractive = (props) => {
               </span>
             </nav>
             <div className="navbar-interactive-buttons2">
-              <input
-                type="text"
-                placeholder={props.textinputPlaceholder1}
-                className="input"
-              />
+              <form onSubmit={handleSearchSubmit}>
+                <input
+                  type="text"
+                  placeholder={props.textinputPlaceholder}
+                  className="input"
+                  value={searchInput}
+                  onChange={(e) => setSearchInput(e.target.value)}
+                />
+              </form>
             </div>
           </div>
           <div>

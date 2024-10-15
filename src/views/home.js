@@ -1,386 +1,94 @@
-import React, { Fragment } from 'react'
+import React, { useState, useEffect } from 'react';
+import { useLocation, useHistory } from 'react-router-dom';
+import WeatherContent from '../components/weather-content';
+import NavBar from '../components/navbar-interactive'; // Re-use your existing NavBar component
+import './home.css'; // Keep your existing CSS
 
-import { Helmet } from 'react-helmet'
+const Home = () => {
+  const [location, setLocation] = useState(''); // Location state for search input
+  const [weatherData, setWeatherData] = useState(null); // Weather data state
+  const [loading, setLoading] = useState(false); // Loading state
+  const [error, setError] = useState(null); // Error state
+  const [hasSearched, setHasSearched] = useState(false); // Track if the user has searched
 
-import NavbarInteractive from '../components/navbar-interactive'
-import WeatherContent from '../components/weather-content'
-import './home.css'
+  const urlLocation = useLocation(); // Get current URL info
+  const history = useHistory(); // To manage URL navigation
 
-const Home = (props) => {
+  // Function to fetch weather data for a specific location
+  const fetchWeatherData = async (loc) => {
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await fetch(
+        `https://api.weather.daiki-bot.xyz/api/forcast/current?location=${encodeURIComponent(loc)}`
+      );
+      const data = await response.json();
+      if (data.error) {
+        throw new Error(data.error.message);
+      }
+      setWeatherData(data);
+      setHasSearched(true); // Mark that the user has searched
+    } catch (err) {
+      setError(err.message);
+      setWeatherData(null);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Function to handle URL query parameter for location
+  useEffect(() => {
+    const queryParams = new URLSearchParams(urlLocation.search);
+    const locationParam = queryParams.get('location');
+    if (locationParam) {
+      setLocation(locationParam); // Set the input based on the URL parameter
+      fetchWeatherData(locationParam); // Fetch weather data for the URL location
+      setHasSearched(true); // Mark that the user has searched
+    }
+  }, [urlLocation.search]); // Trigger on URL change
+
+  // Handle search form submission from the NavBar
+  const handleSearch = (searchLocation) => {
+    if (searchLocation) {
+      setLocation(searchLocation);
+      // Update the URL with the new location
+      history.push(`?location=${encodeURIComponent(searchLocation)}`);
+      fetchWeatherData(searchLocation); // Fetch weather data
+    }
+  };
+
   return (
     <div className="home-container">
-      <Helmet>
-        <title>Daiki Weather</title>
-        <meta property="og:title" content="Daiki Weather" />
-        <meta name="robots" content="noindex" />
-      </Helmet>
-      <NavbarInteractive
-        text={
-          <Fragment>
-            <span className="home-text100">Forcast</span>
-          </Fragment>
-        }
-        text1={
-          <Fragment>
-            <span className="home-text101">Lightning</span>
-          </Fragment>
-        }
-        text2={
-          <Fragment>
-            <span className="home-text102">Alerts</span>
-          </Fragment>
-        }
-        text3={
-          <Fragment>
-            <span className="home-text103">
-              <span className="home-text104">Forcast</span>
-              <br></br>
-            </span>
-          </Fragment>
-        }
-        text4={
-          <Fragment>
-            <span className="home-text106">
-              <span>Lightning</span>
-              <br></br>
-            </span>
-          </Fragment>
-        }
-        text5={
-          <Fragment>
-            <span className="home-text109">
-              <span className="home-text110">Alerts</span>
-              <br></br>
-            </span>
-          </Fragment>
-        }
-      ></NavbarInteractive>
-      <div className="home-layout251 thq-section-padding">
-        <div className="home-max-width thq-section-max-width">
-          <WeatherContent
-            heading={
-              <Fragment>
-                <span className="home-text112">
-                  <span>Location Name</span>
-                  <br></br>
-                </span>
-              </Fragment>
-            }
-            feature2Title={
-              <Fragment>
-                <span className="home-text115">##°</span>
-              </Fragment>
-            }
-            feature2Description={
-              <Fragment>
-                <span className="home-feature2-description10 thq-body-small">
-                  <span>Feels Like</span>
-                  <br></br>
-                  <span>##°</span>
-                  <br></br>
-                </span>
-              </Fragment>
-            }
-            feature2Description8={
-              <Fragment>
-                <span className="home-feature2-description11 thq-body-small">
-                  <span>Humidity</span>
-                  <br></br>
-                  <span>##%</span>
-                </span>
-              </Fragment>
-            }
-            feature2Description81={
-              <Fragment>
-                <span className="home-feature2-description12 thq-body-small">
-                  <span>Windchill</span>
-                  <br></br>
-                  <span>##°</span>
-                  <br></br>
-                </span>
-              </Fragment>
-            }
-            feature2Description82={
-              <Fragment>
-                <span className="home-feature2-description13 thq-body-small">
-                  <span>Avg. Wind</span>
-                  <br></br>
-                  <span>DIR ## MPH</span>
-                  <br></br>
-                </span>
-              </Fragment>
-            }
-            feature2Description811={
-              <Fragment>
-                <span className="home-feature2-description14 thq-body-small">
-                  <span>Wind Gust</span>
-                  <br className="home-text132"></br>
-                  <span>## MPH</span>
-                  <br></br>
-                </span>
-              </Fragment>
-            }
-          ></WeatherContent>
-          <WeatherContent
-            heading={
-              <Fragment>
-                <span className="home-text135">
-                  <span>Location Name</span>
-                  <br></br>
-                </span>
-              </Fragment>
-            }
-            feature2Title={
-              <Fragment>
-                <span className="home-text138">##°</span>
-              </Fragment>
-            }
-            feature2Description={
-              <Fragment>
-                <span className="home-feature2-description15 thq-body-small">
-                  <span>Feels Like</span>
-                  <br></br>
-                  <span>##°</span>
-                  <br></br>
-                </span>
-              </Fragment>
-            }
-            feature2Description8={
-              <Fragment>
-                <span className="home-feature2-description16 thq-body-small">
-                  <span>Humidity</span>
-                  <br></br>
-                  <span>##%</span>
-                </span>
-              </Fragment>
-            }
-            feature2Description81={
-              <Fragment>
-                <span className="home-feature2-description17 thq-body-small">
-                  <span>Windchill</span>
-                  <br></br>
-                  <span>##°</span>
-                  <br></br>
-                </span>
-              </Fragment>
-            }
-            feature2Description82={
-              <Fragment>
-                <span className="home-feature2-description18 thq-body-small">
-                  <span>Avg. Wind</span>
-                  <br></br>
-                  <span>DIR ## MPH</span>
-                  <br></br>
-                </span>
-              </Fragment>
-            }
-            feature2Description811={
-              <Fragment>
-                <span className="home-feature2-description19 thq-body-small">
-                  <span>Wind Gust</span>
-                  <br className="home-text155"></br>
-                  <span>## MPH</span>
-                  <br></br>
-                </span>
-              </Fragment>
-            }
-          ></WeatherContent>
-          <WeatherContent
-            heading={
-              <Fragment>
-                <span className="home-text158">
-                  <span>Location Name</span>
-                  <br></br>
-                </span>
-              </Fragment>
-            }
-            feature2Title={
-              <Fragment>
-                <span className="home-text161">##°</span>
-              </Fragment>
-            }
-            feature2Description={
-              <Fragment>
-                <span className="home-feature2-description20 thq-body-small">
-                  <span>Feels Like</span>
-                  <br></br>
-                  <span>##°</span>
-                  <br></br>
-                </span>
-              </Fragment>
-            }
-            feature2Description8={
-              <Fragment>
-                <span className="home-feature2-description21 thq-body-small">
-                  <span>Humidity</span>
-                  <br></br>
-                  <span>##%</span>
-                </span>
-              </Fragment>
-            }
-            feature2Description81={
-              <Fragment>
-                <span className="home-feature2-description22 thq-body-small">
-                  <span>Windchill</span>
-                  <br></br>
-                  <span>##°</span>
-                  <br></br>
-                </span>
-              </Fragment>
-            }
-            feature2Description82={
-              <Fragment>
-                <span className="home-feature2-description23 thq-body-small">
-                  <span>Avg. Wind</span>
-                  <br></br>
-                  <span>DIR ## MPH</span>
-                  <br></br>
-                </span>
-              </Fragment>
-            }
-            feature2Description811={
-              <Fragment>
-                <span className="home-feature2-description24 thq-body-small">
-                  <span>Wind Gust</span>
-                  <br className="home-text178"></br>
-                  <span>## MPH</span>
-                  <br></br>
-                </span>
-              </Fragment>
-            }
-          ></WeatherContent>
-          <WeatherContent
-            heading={
-              <Fragment>
-                <span className="home-text181">
-                  <span>Location Name</span>
-                  <br></br>
-                </span>
-              </Fragment>
-            }
-            feature2Title={
-              <Fragment>
-                <span className="home-text184">##°</span>
-              </Fragment>
-            }
-            feature2Description={
-              <Fragment>
-                <span className="home-feature2-description25 thq-body-small">
-                  <span>Feels Like</span>
-                  <br></br>
-                  <span>##°</span>
-                  <br></br>
-                </span>
-              </Fragment>
-            }
-            feature2Description8={
-              <Fragment>
-                <span className="home-feature2-description26 thq-body-small">
-                  <span>Humidity</span>
-                  <br></br>
-                  <span>##%</span>
-                </span>
-              </Fragment>
-            }
-            feature2Description81={
-              <Fragment>
-                <span className="home-feature2-description27 thq-body-small">
-                  <span>Windchill</span>
-                  <br></br>
-                  <span>##°</span>
-                  <br></br>
-                </span>
-              </Fragment>
-            }
-            feature2Description82={
-              <Fragment>
-                <span className="home-feature2-description28 thq-body-small">
-                  <span>Avg. Wind</span>
-                  <br></br>
-                  <span>DIR ## MPH</span>
-                  <br></br>
-                </span>
-              </Fragment>
-            }
-            feature2Description811={
-              <Fragment>
-                <span className="home-feature2-description29 thq-body-small">
-                  <span>Wind Gust</span>
-                  <br className="home-text201"></br>
-                  <span>## MPH</span>
-                  <br></br>
-                </span>
-              </Fragment>
-            }
-          ></WeatherContent>
-          <WeatherContent
-            heading={
-              <Fragment>
-                <span className="home-text204">
-                  <span>Location Name</span>
-                  <br></br>
-                </span>
-              </Fragment>
-            }
-            feature2Title={
-              <Fragment>
-                <span className="home-text207">##°</span>
-              </Fragment>
-            }
-            feature2Description={
-              <Fragment>
-                <span className="home-feature2-description30 thq-body-small">
-                  <span>Feels Like</span>
-                  <br></br>
-                  <span>##°</span>
-                  <br></br>
-                </span>
-              </Fragment>
-            }
-            feature2Description8={
-              <Fragment>
-                <span className="home-feature2-description31 thq-body-small">
-                  <span>Humidity</span>
-                  <br></br>
-                  <span>##%</span>
-                </span>
-              </Fragment>
-            }
-            feature2Description81={
-              <Fragment>
-                <span className="home-feature2-description32 thq-body-small">
-                  <span>Windchill</span>
-                  <br></br>
-                  <span>##°</span>
-                  <br></br>
-                </span>
-              </Fragment>
-            }
-            feature2Description82={
-              <Fragment>
-                <span className="home-feature2-description33 thq-body-small">
-                  <span>Avg. Wind</span>
-                  <br></br>
-                  <span>DIR ## MPH</span>
-                  <br></br>
-                </span>
-              </Fragment>
-            }
-            feature2Description811={
-              <Fragment>
-                <span className="home-feature2-description34 thq-body-small">
-                  <span>Wind Gust</span>
-                  <br className="home-text224"></br>
-                  <span>## MPH</span>
-                  <br></br>
-                </span>
-              </Fragment>
-            }
-          ></WeatherContent>
+      {/* Use your existing NavBar and pass the handleSearch function */}
+      <NavBar onSearch={handleSearch} />
+
+      <div className="home-layout251">
+        <div className="home-max-width">
+          {loading && <div>Loading...</div>}
+          {error && <div className="error">{error}</div>}
+
+          {!hasSearched && (
+            <div className="no-search-message" style={{ color: 'white' }}>
+              <h2>Please use the search bar to view current weather data.</h2>
+            </div>
+          )}
+
+          {hasSearched && weatherData && (
+            <WeatherContent
+              heading={<span className='home-text112'>{weatherData.location.name}</span>}
+              feature1ImageSrc={`https:${weatherData.current.condition.icon}`}
+              feature2Title={<span className='home-text115'>{Math.round(weatherData.current.temp_f)}°</span>}
+              feature2Description={<span className='home-feature2-description10 thq-body-small'>Feels Like {Math.round(weatherData.current.feelslike_f)}°</span>}
+              feature2Description8={<span className='home-feature2-description11 thq-body-small'>Humidity {weatherData.current.humidity}%</span>}
+              feature2Description81={<span className='home-feature2-description12 thq-body-small'>Windchill {Math.round(weatherData.current.windchill_f)}°</span>}
+              feature2Description82={<span className='home-feature2-description13 thq-body-small'>Avg. Wind {weatherData.current.wind_dir} {weatherData.current.wind_mph} MPH</span>}
+              feature2Description811={<span className='home-feature2-description14 thq-body-small'>Wind Gust {weatherData.current.gust_mph} MPH</span>}
+            />
+          )}
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
