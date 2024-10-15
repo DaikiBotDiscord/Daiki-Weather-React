@@ -25,6 +25,15 @@ const NavbarInteractive = (props) => {
           src={props.imageSrc}
           className="navbar-interactive-image"
         />
+        <form onSubmit={handleSearchSubmit}>
+          <input
+            type="text"
+            placeholder={props.textinputPlaceholder2}
+            className="navbar-interactive-textinput1 input"
+            value={searchInput}
+            onChange={(e) => setSearchInput(e.target.value)}
+          />
+        </form>
         <div
           data-thq="thq-navbar-nav"
           className="navbar-interactive-desktop-menu"
@@ -127,17 +136,6 @@ const NavbarInteractive = (props) => {
                 )}
               </span>
             </nav>
-            <div className="navbar-interactive-buttons2">
-              <form onSubmit={handleSearchSubmit}>
-                <input
-                  type="text"
-                  placeholder={props.textinputPlaceholder}
-                  className="input"
-                  value={searchInput}
-                  onChange={(e) => setSearchInput(e.target.value)}
-                />
-              </form>
-            </div>
           </div>
           <div>
             <svg
@@ -177,6 +175,7 @@ NavbarInteractive.defaultProps = {
   logoAlt: 'image',
   imageAlt: 'logo',
   textinputPlaceholder: 'Search Location',
+  textinputPlaceholder2: 'Search Location',
 }
 
 NavbarInteractive.propTypes = {
@@ -191,6 +190,7 @@ NavbarInteractive.propTypes = {
   logoAlt: PropTypes.string,
   imageAlt: PropTypes.string,
   textinputPlaceholder: PropTypes.string,
+  textinputPlaceholder2: PropTypes.string,
 }
 
 export default NavbarInteractive
