@@ -20,9 +20,9 @@ const Home = (props) => {
         />
         <div data-thq="thq-navbar-nav" className="home-desktop-menu">
           <nav className="home-links1">
-            <span className="home-text10">Forcast</span>
-            <span className="home-text11">Lightning</span>
-            <span className="home-text12">Alerts</span>
+            <span className="home-text100">Forcast</span>
+            <span className="home-text101">Lightning</span>
+            <span className="home-text102">Alerts</span>
           </nav>
           <div className="home-buttons1">
             <input
@@ -52,16 +52,16 @@ const Home = (props) => {
               </div>
             </div>
             <nav className="home-links2">
-              <span className="home-text13">
-                <span className="home-text14">Forcast</span>
+              <span className="home-text103">
+                <span className="home-text104">Forcast</span>
                 <br></br>
               </span>
-              <span className="home-text16">
+              <span className="home-text106">
                 <span>Lightning</span>
                 <br></br>
               </span>
-              <span className="home-text19">
-                <span className="home-text20">Alerts</span>
+              <span className="home-text109">
+                <span className="home-text110">Alerts</span>
                 <br></br>
               </span>
             </nav>
@@ -90,7 +90,7 @@ const Home = (props) => {
         <div className="home-max-width thq-section-max-width">
           <div className="home-content10">
             <div className="home-row1 thq-flex-row">
-              <h1 className="home-text22">
+              <h1 className="home-text112">
                 <span>Location Name</span>
                 <br></br>
               </h1>
@@ -142,7 +142,7 @@ const Home = (props) => {
           </div>
           <div className="home-content14">
             <div className="home-row2 thq-flex-row">
-              <h1 className="home-text45">
+              <h1 className="home-text135">
                 <span>Location Name</span>
                 <br></br>
               </h1>
@@ -194,7 +194,7 @@ const Home = (props) => {
           </div>
           <div className="home-content18">
             <div className="home-row3 thq-flex-row">
-              <h1 className="home-text68">
+              <h1 className="home-text158">
                 <span>Location Name</span>
                 <br></br>
               </h1>
@@ -235,6 +235,58 @@ const Home = (props) => {
                     <br></br>
                   </span>
                   <span className="home-feature2-description24 thq-body-small">
+                    <span>Wind Gust</span>
+                    <br></br>
+                    <span>## MPH</span>
+                    <br></br>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="home-content22">
+            <div className="home-row4 thq-flex-row">
+              <h1 className="home-text181">
+                <span>Location Name</span>
+                <br></br>
+              </h1>
+              <div className="home-feature14 thq-flex-column">
+                <img
+                  alt="Intuitive Interface Image"
+                  src="https://cdn.weatherapi.com/weather/128x128/day/116.png"
+                  className="home-feature1-image4"
+                />
+                <div className="home-content23">
+                  <h3 className="home-feature2-title4">##°</h3>
+                  <span className="home-feature2-description25 thq-body-small">
+                    <span>Feels Like</span>
+                    <br></br>
+                    <span>##°</span>
+                    <br></br>
+                  </span>
+                </div>
+                <div className="home-content24">
+                  <span className="home-feature2-description26 thq-body-small">
+                    <span>Humidity</span>
+                    <br></br>
+                    <span>##%</span>
+                    <br></br>
+                  </span>
+                  <span className="home-feature2-description27 thq-body-small">
+                    <span>Windchill</span>
+                    <br></br>
+                    <span>##°</span>
+                    <br></br>
+                  </span>
+                </div>
+                <div className="home-content25">
+                  <span className="home-feature2-description28 thq-body-small">
+                    <span>Avg. Wind</span>
+                    <br></br>
+                    <span>DIR # MPH</span>
+                    <br></br>
+                  </span>
+                  <span className="home-feature2-description29 thq-body-small">
                     <span>Wind Gust</span>
                     <br></br>
                     <span>## MPH</span>
