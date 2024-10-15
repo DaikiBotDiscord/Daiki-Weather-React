@@ -1,5 +1,6 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import { Helmet } from 'react-helmet';
+import NavbarInteractive from '../components/navbar-interactive'
 import WeatherContent from '../components/weather-content';
 import './home.css';
 
@@ -50,16 +51,7 @@ const Home = () => {
         <meta property="og:title" content="Daiki Weather" />
         <meta name="robots" content="noindex" />
       </Helmet>
-      <header data-thq="thq-navbar" className="home-navbar-interactive">
-        <img alt="logo" src="/daiki%20weather-1500w.png" className="home-image" />
-        <div data-thq="thq-navbar-nav" className="home-desktop-menu">
-          <nav className="home-links1">
-            <span className="home-text100">Forcast</span>
-            <span className="home-text101">Lightning</span>
-            <span className="home-text102">Alerts</span>
-          </nav>
-        </div>
-      </header>
+      <NavbarInteractive />
       <div className="home-layout251 thq-section-padding">
         <div className="home-max-width thq-section-max-width">
           {weatherData.length === 0 ? (
