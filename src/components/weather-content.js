@@ -1,8 +1,6 @@
-import React, { Fragment } from 'react'
-
-import PropTypes from 'prop-types'
-
-import './weather-content.css'
+import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
+import './weather-content.css';
 
 const WeatherContent = (props) => {
   return (
@@ -101,20 +99,20 @@ const WeatherContent = (props) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 WeatherContent.defaultProps = {
-  feature1ImageSrc: 'https://cdn.weatherapi.com/weather/128x128/day/116.png',
+  feature1ImageSrc: 'https://www.daiki-bot.xyz/playground_assets/main%20logo-200h.png',
   heading: undefined,
   feature2Title: undefined,
   feature2Description: undefined,
-  feature1ImageAlt: 'Intuitive Interface Image',
+  feature1ImageAlt: 'Weather Icon',
   feature2Description8: undefined,
   feature2Description81: undefined,
   feature2Description82: undefined,
   feature2Description811: undefined,
-}
+};
 
 WeatherContent.propTypes = {
   feature1ImageSrc: PropTypes.string,
@@ -126,6 +124,6 @@ WeatherContent.propTypes = {
   feature2Description81: PropTypes.element,
   feature2Description82: PropTypes.element,
   feature2Description811: PropTypes.element,
-}
+};
 
-export default WeatherContent
+export default WeatherContent;

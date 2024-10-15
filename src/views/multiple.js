@@ -3,15 +3,9 @@ import { Helmet } from 'react-helmet';
 import WeatherContent from '../components/weather-content';
 import './home.css';
 
-const predefinedLocations = [
-  'New York, NY',
-  'Los Angeles, CA',
-  'Chicago, IL',
-  'Houston, TX',
-  'Phoenix, AZ'
-];
-
 const Home = () => {
+  const [location, setLocation] = useState(''); // Empty by default for input
+  const [locations, setLocations] = useState([]); // Stores multiple locations
   const [weatherData, setWeatherData] = useState([]); // Stores weather data for multiple locations
 
   // Function to fetch weather data for a specific location
@@ -28,20 +22,24 @@ const Home = () => {
     }
   };
 
-  // Fetch weather data for all predefined locations when component mounts
-  useEffect(() => {
-    const loadWeatherData = async () => {
-      const allWeatherData = await Promise.all(
-        predefinedLocations.map(async (location) => {
-          const data = await fetchWeatherData(location);
-          return data;
-        })
-      );
-      setWeatherData(allWeatherData.filter((data) => data !== null)); // Add only valid data
-    };
+  // Handle form submission to add a new location
+  const handleAddLocation = async (e) => {
+    e.preventDefault();
+    if (location === '') return; // Prevent adding empty location
 
-    loadWeatherData();
-  }, []);
+    const newWeatherData = await fetchWeatherData(location);
+    if (newWeatherData) {
+      setLocations([...locations, location]); // Add new location
+      setWeatherData([...weatherData, newWeatherData]); // Add fetched weather data
+      setLocation(''); // Clear input after adding location
+    }
+  };
+
+  // Function to clear all locations and weather data
+  const handleClearLocations = () => {
+    setLocations([]); // Clear all locations
+    setWeatherData([]); // Clear all weather data
+  };
 
   return (
     <div className="home-container">
@@ -58,12 +56,27 @@ const Home = () => {
             <span className="home-text101">Lightning</span>
             <span className="home-text102">Alerts</span>
           </nav>
+          <div className="home-buttons1">
+            <form onSubmit={handleAddLocation}>
+              <input
+                type="text"
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
+                placeholder="Search Location"
+                className="input"
+              />
+              <button type="submit" style={{ color: 'white' }}>Search</button>
+              <button type="button" onClick={handleClearLocations} style={{ marginLeft: '10px', color: 'white' }}>
+                Clear All
+              </button>
+            </form>
+          </div>
         </div>
       </header>
       <div className="home-layout251 thq-section-padding">
         <div className="home-max-width thq-section-max-width">
           {weatherData.length === 0 ? (
-            <div>Loading weather data...</div>
+            <div>No locations added yet. Add a location to see the weather data.</div>
           ) : (
             weatherData.map((data, index) => (
               <WeatherContent
@@ -79,7 +92,7 @@ const Home = () => {
                 feature1ImageSrc={`https:${data.current.condition.icon}`} // Dynamic weather icon
                 feature2Title={
                   <Fragment>
-                    <span className="home-text115">{Math.round(data.current.temp_f)}°</span>
+                    <span className="home-text115">{data.current.temp_f}°</span>
                   </Fragment>
                 }
                 feature2Description={
@@ -87,7 +100,7 @@ const Home = () => {
                     <span className="home-feature2-description10 thq-body-small">
                       <span>Feels Like</span>
                       <br />
-                      <span>{Math.round(data.current.feelslike_f)}°</span>
+                      <span>{data.current.feelslike_f}°</span>
                       <br />
                     </span>
                   </Fragment>
@@ -106,7 +119,7 @@ const Home = () => {
                     <span className="home-feature2-description12 thq-body-small">
                       <span>Windchill</span>
                       <br />
-                      <span>{Math.round(data.current.windchill_f)}°</span>
+                      <span>{data.current.windchill_f}°</span>
                       <br />
                     </span>
                   </Fragment>
