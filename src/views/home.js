@@ -296,6 +296,58 @@ const Home = (props) => {
               </div>
             </div>
           </div>
+          <div className="home-content26">
+            <div className="home-row5 thq-flex-row">
+              <h1 className="home-text204">
+                <span>Location Name</span>
+                <br></br>
+              </h1>
+              <div className="home-feature15 thq-flex-column">
+                <img
+                  alt="Intuitive Interface Image"
+                  src="https://cdn.weatherapi.com/weather/128x128/day/116.png"
+                  className="home-feature1-image5"
+                />
+                <div className="home-content27">
+                  <h3 className="home-feature2-title5">##°</h3>
+                  <span className="home-feature2-description30 thq-body-small">
+                    <span>Feels Like</span>
+                    <br></br>
+                    <span>##°</span>
+                    <br></br>
+                  </span>
+                </div>
+                <div className="home-content28">
+                  <span className="home-feature2-description31 thq-body-small">
+                    <span>Humidity</span>
+                    <br></br>
+                    <span>##%</span>
+                    <br></br>
+                  </span>
+                  <span className="home-feature2-description32 thq-body-small">
+                    <span>Windchill</span>
+                    <br></br>
+                    <span>##°</span>
+                    <br></br>
+                  </span>
+                </div>
+                <div className="home-content29">
+                  <span className="home-feature2-description33 thq-body-small">
+                    <span>Avg. Wind</span>
+                    <br></br>
+                    <span>DIR # MPH</span>
+                    <br></br>
+                  </span>
+                  <span className="home-feature2-description34 thq-body-small">
+                    <span>Wind Gust</span>
+                    <br></br>
+                    <span>## MPH</span>
+                    <br></br>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
