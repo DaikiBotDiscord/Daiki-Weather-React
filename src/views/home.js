@@ -113,29 +113,18 @@ const Home = (props) => {
                 </span>
               </Fragment>
             }
-            feature2Description5={
+            feature2Description8={
               <Fragment>
                 <span className="home-feature2-description11 thq-body-small">
-                  <span>Avg. Wind</span>
-                  <br></br>
-                  <span>##°</span>
-                  <br></br>
-                </span>
-              </Fragment>
-            }
-            feature2Description6={
-              <Fragment>
-                <span className="home-feature2-description12 thq-body-small">
                   <span>Humidity</span>
                   <br></br>
                   <span>##%</span>
-                  <br></br>
                 </span>
               </Fragment>
             }
-            feature2Description61={
+            feature2Description81={
               <Fragment>
-                <span className="home-feature2-description13 thq-body-small">
+                <span className="home-feature2-description12 thq-body-small">
                   <span>Windchill</span>
                   <br></br>
                   <span>##°</span>
@@ -143,12 +132,22 @@ const Home = (props) => {
                 </span>
               </Fragment>
             }
-            feature2Description51={
+            feature2Description82={
+              <Fragment>
+                <span className="home-feature2-description13 thq-body-small">
+                  <span>Avg. Wind</span>
+                  <br></br>
+                  <span>DIR ## MPH</span>
+                  <br></br>
+                </span>
+              </Fragment>
+            }
+            feature2Description811={
               <Fragment>
                 <span className="home-feature2-description14 thq-body-small">
                   <span>Wind Gust</span>
-                  <br></br>
-                  <span>##°</span>
+                  <br className="home-text132"></br>
+                  <span>## MPH</span>
                   <br></br>
                 </span>
               </Fragment>
@@ -157,7 +156,7 @@ const Home = (props) => {
           <WeatherContent
             heading={
               <Fragment>
-                <span className="home-text136">
+                <span className="home-text135">
                   <span>Location Name</span>
                   <br></br>
                 </span>
@@ -165,7 +164,7 @@ const Home = (props) => {
             }
             feature2Title={
               <Fragment>
-                <span className="home-text139">##°</span>
+                <span className="home-text138">##°</span>
               </Fragment>
             }
             feature2Description={
@@ -178,29 +177,18 @@ const Home = (props) => {
                 </span>
               </Fragment>
             }
-            feature2Description5={
+            feature2Description8={
               <Fragment>
                 <span className="home-feature2-description16 thq-body-small">
-                  <span>Avg. Wind</span>
-                  <br></br>
-                  <span>##°</span>
-                  <br></br>
-                </span>
-              </Fragment>
-            }
-            feature2Description6={
-              <Fragment>
-                <span className="home-feature2-description17 thq-body-small">
                   <span>Humidity</span>
                   <br></br>
                   <span>##%</span>
-                  <br></br>
                 </span>
               </Fragment>
             }
-            feature2Description61={
+            feature2Description81={
               <Fragment>
-                <span className="home-feature2-description18 thq-body-small">
+                <span className="home-feature2-description17 thq-body-small">
                   <span>Windchill</span>
                   <br></br>
                   <span>##°</span>
@@ -208,12 +196,22 @@ const Home = (props) => {
                 </span>
               </Fragment>
             }
-            feature2Description51={
+            feature2Description82={
+              <Fragment>
+                <span className="home-feature2-description18 thq-body-small">
+                  <span>Avg. Wind</span>
+                  <br></br>
+                  <span>DIR ## MPH</span>
+                  <br></br>
+                </span>
+              </Fragment>
+            }
+            feature2Description811={
               <Fragment>
                 <span className="home-feature2-description19 thq-body-small">
                   <span>Wind Gust</span>
-                  <br></br>
-                  <span>##°</span>
+                  <br className="home-text155"></br>
+                  <span>## MPH</span>
                   <br></br>
                 </span>
               </Fragment>
@@ -222,7 +220,7 @@ const Home = (props) => {
           <WeatherContent
             heading={
               <Fragment>
-                <span className="home-text160">
+                <span className="home-text158">
                   <span>Location Name</span>
                   <br></br>
                 </span>
@@ -230,7 +228,7 @@ const Home = (props) => {
             }
             feature2Title={
               <Fragment>
-                <span className="home-text163">##°</span>
+                <span className="home-text161">##°</span>
               </Fragment>
             }
             feature2Description={
@@ -243,29 +241,18 @@ const Home = (props) => {
                 </span>
               </Fragment>
             }
-            feature2Description5={
+            feature2Description8={
               <Fragment>
                 <span className="home-feature2-description21 thq-body-small">
-                  <span>Avg. Wind</span>
-                  <br></br>
-                  <span>##°</span>
-                  <br></br>
-                </span>
-              </Fragment>
-            }
-            feature2Description6={
-              <Fragment>
-                <span className="home-feature2-description22 thq-body-small">
                   <span>Humidity</span>
                   <br></br>
                   <span>##%</span>
-                  <br></br>
                 </span>
               </Fragment>
             }
-            feature2Description61={
+            feature2Description81={
               <Fragment>
-                <span className="home-feature2-description23 thq-body-small">
+                <span className="home-feature2-description22 thq-body-small">
                   <span>Windchill</span>
                   <br></br>
                   <span>##°</span>
@@ -273,12 +260,22 @@ const Home = (props) => {
                 </span>
               </Fragment>
             }
-            feature2Description51={
+            feature2Description82={
+              <Fragment>
+                <span className="home-feature2-description23 thq-body-small">
+                  <span>Avg. Wind</span>
+                  <br></br>
+                  <span>DIR ## MPH</span>
+                  <br></br>
+                </span>
+              </Fragment>
+            }
+            feature2Description811={
               <Fragment>
                 <span className="home-feature2-description24 thq-body-small">
                   <span>Wind Gust</span>
-                  <br></br>
-                  <span>##°</span>
+                  <br className="home-text178"></br>
+                  <span>## MPH</span>
                   <br></br>
                 </span>
               </Fragment>
@@ -287,7 +284,7 @@ const Home = (props) => {
           <WeatherContent
             heading={
               <Fragment>
-                <span className="home-text184">
+                <span className="home-text181">
                   <span>Location Name</span>
                   <br></br>
                 </span>
@@ -295,7 +292,7 @@ const Home = (props) => {
             }
             feature2Title={
               <Fragment>
-                <span className="home-text187">##°</span>
+                <span className="home-text184">##°</span>
               </Fragment>
             }
             feature2Description={
@@ -308,29 +305,18 @@ const Home = (props) => {
                 </span>
               </Fragment>
             }
-            feature2Description5={
+            feature2Description8={
               <Fragment>
                 <span className="home-feature2-description26 thq-body-small">
-                  <span>Avg. Wind</span>
-                  <br></br>
-                  <span>##°</span>
-                  <br></br>
-                </span>
-              </Fragment>
-            }
-            feature2Description6={
-              <Fragment>
-                <span className="home-feature2-description27 thq-body-small">
                   <span>Humidity</span>
                   <br></br>
                   <span>##%</span>
-                  <br></br>
                 </span>
               </Fragment>
             }
-            feature2Description61={
+            feature2Description81={
               <Fragment>
-                <span className="home-feature2-description28 thq-body-small">
+                <span className="home-feature2-description27 thq-body-small">
                   <span>Windchill</span>
                   <br></br>
                   <span>##°</span>
@@ -338,12 +324,22 @@ const Home = (props) => {
                 </span>
               </Fragment>
             }
-            feature2Description51={
+            feature2Description82={
+              <Fragment>
+                <span className="home-feature2-description28 thq-body-small">
+                  <span>Avg. Wind</span>
+                  <br></br>
+                  <span>DIR ## MPH</span>
+                  <br></br>
+                </span>
+              </Fragment>
+            }
+            feature2Description811={
               <Fragment>
                 <span className="home-feature2-description29 thq-body-small">
                   <span>Wind Gust</span>
-                  <br></br>
-                  <span>##°</span>
+                  <br className="home-text201"></br>
+                  <span>## MPH</span>
                   <br></br>
                 </span>
               </Fragment>
@@ -352,7 +348,7 @@ const Home = (props) => {
           <WeatherContent
             heading={
               <Fragment>
-                <span className="home-text208">
+                <span className="home-text204">
                   <span>Location Name</span>
                   <br></br>
                 </span>
@@ -360,7 +356,7 @@ const Home = (props) => {
             }
             feature2Title={
               <Fragment>
-                <span className="home-text211">##°</span>
+                <span className="home-text207">##°</span>
               </Fragment>
             }
             feature2Description={
@@ -373,29 +369,18 @@ const Home = (props) => {
                 </span>
               </Fragment>
             }
-            feature2Description5={
+            feature2Description8={
               <Fragment>
                 <span className="home-feature2-description31 thq-body-small">
-                  <span>Avg. Wind</span>
-                  <br></br>
-                  <span>##°</span>
-                  <br></br>
-                </span>
-              </Fragment>
-            }
-            feature2Description6={
-              <Fragment>
-                <span className="home-feature2-description32 thq-body-small">
                   <span>Humidity</span>
                   <br></br>
                   <span>##%</span>
-                  <br></br>
                 </span>
               </Fragment>
             }
-            feature2Description61={
+            feature2Description81={
               <Fragment>
-                <span className="home-feature2-description33 thq-body-small">
+                <span className="home-feature2-description32 thq-body-small">
                   <span>Windchill</span>
                   <br></br>
                   <span>##°</span>
@@ -403,12 +388,22 @@ const Home = (props) => {
                 </span>
               </Fragment>
             }
-            feature2Description51={
+            feature2Description82={
+              <Fragment>
+                <span className="home-feature2-description33 thq-body-small">
+                  <span>Avg. Wind</span>
+                  <br></br>
+                  <span>DIR ## MPH</span>
+                  <br></br>
+                </span>
+              </Fragment>
+            }
+            feature2Description811={
               <Fragment>
                 <span className="home-feature2-description34 thq-body-small">
                   <span>Wind Gust</span>
-                  <br></br>
-                  <span>##°</span>
+                  <br className="home-text224"></br>
+                  <span>## MPH</span>
                   <br></br>
                 </span>
               </Fragment>

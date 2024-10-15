@@ -24,8 +24,8 @@ const WeatherContent = (props) => {
             src={props.feature1ImageSrc}
             className="weather-content-feature1-image"
           />
-          <div className="weather-content-container">
-            <div className="weather-content-content1">
+          <div className="weather-content-container1">
+            <div className="weather-content-content">
               <h3>
                 {props.feature2Title ?? (
                   <Fragment>
@@ -46,23 +46,22 @@ const WeatherContent = (props) => {
                 )}
               </span>
             </div>
-            <div className="weather-content-content2">
+            <div className="weather-content-container2">
               <span>
-                {props.feature2Description6 ?? (
+                {props.feature2Description8 ?? (
                   <Fragment>
-                    <span className="weather-content-feature2-description17 thq-body-small">
+                    <span className="weather-content-feature2-description16 thq-body-small">
                       <span>Humidity</span>
                       <br></br>
                       <span>##%</span>
-                      <br></br>
                     </span>
                   </Fragment>
                 )}
               </span>
               <span>
-                {props.feature2Description61 ?? (
+                {props.feature2Description81 ?? (
                   <Fragment>
-                    <span className="weather-content-feature2-description18 thq-body-small">
+                    <span className="weather-content-feature2-description17 thq-body-small">
                       <span>Windchill</span>
                       <br></br>
                       <span>##°</span>
@@ -72,26 +71,26 @@ const WeatherContent = (props) => {
                 )}
               </span>
             </div>
-            <div className="weather-content-content3">
+            <div className="weather-content-container3">
               <span>
-                {props.feature2Description5 ?? (
+                {props.feature2Description82 ?? (
                   <Fragment>
-                    <span className="weather-content-feature2-description16 thq-body-small">
+                    <span className="weather-content-feature2-description18 thq-body-small">
                       <span>Avg. Wind</span>
                       <br></br>
-                      <span>##°</span>
+                      <span>DIR ## MPH</span>
                       <br></br>
                     </span>
                   </Fragment>
                 )}
               </span>
               <span>
-                {props.feature2Description51 ?? (
+                {props.feature2Description811 ?? (
                   <Fragment>
                     <span className="weather-content-feature2-description19 thq-body-small">
                       <span>Wind Gust</span>
-                      <br></br>
-                      <span>##°</span>
+                      <br className="weather-content-text31"></br>
+                      <span>## MPH</span>
                       <br></br>
                     </span>
                   </Fragment>
@@ -111,10 +110,10 @@ WeatherContent.defaultProps = {
   feature2Title: undefined,
   feature2Description: undefined,
   feature1ImageAlt: 'Intuitive Interface Image',
-  feature2Description5: undefined,
-  feature2Description6: undefined,
-  feature2Description61: undefined,
-  feature2Description51: undefined,
+  feature2Description8: undefined,
+  feature2Description81: undefined,
+  feature2Description82: undefined,
+  feature2Description811: undefined,
 }
 
 WeatherContent.propTypes = {
@@ -123,10 +122,10 @@ WeatherContent.propTypes = {
   feature2Title: PropTypes.element,
   feature2Description: PropTypes.element,
   feature1ImageAlt: PropTypes.string,
-  feature2Description5: PropTypes.element,
-  feature2Description6: PropTypes.element,
-  feature2Description61: PropTypes.element,
-  feature2Description51: PropTypes.element,
+  feature2Description8: PropTypes.element,
+  feature2Description81: PropTypes.element,
+  feature2Description82: PropTypes.element,
+  feature2Description811: PropTypes.element,
 }
 
 export default WeatherContent
