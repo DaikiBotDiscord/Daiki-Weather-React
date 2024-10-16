@@ -51,7 +51,6 @@ const Home = () => {
         throw new Error(data.error.message);
       }
       setSparkData(data);
-      console.log(data)
       setHasSearched(true); // Mark that the user has searched
     } catch (err) {
       setError(err.message);
@@ -72,6 +71,18 @@ const Home = () => {
       setHasSearched(true); // Mark that the user has searched
     }
   }, [urlLocation.search]); // Trigger on URL change
+
+  // Function to refresh data every 5 minutes
+  useEffect(() => {
+    if (hasSearched && location) {
+      const interval = setInterval(() => {
+        fetchWeatherData(location);
+        fetchSparkData(location);
+      }, 300000); // 300,000 ms = 5 minutes
+
+      return () => clearInterval(interval); // Clear the interval when the component unmounts or location changes
+    }
+  }, [hasSearched, location]);
 
   // Handle search form submission from the NavBar
   const handleSearch = (searchLocation) => {
