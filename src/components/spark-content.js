@@ -19,13 +19,17 @@ const SparkContent = (props) => {
                     )}
                 </h1>
                 <div className="spark-content-feature1 thq-flex-column">
-                    <div className="spark-content-container1">
-                        <img
-                            alt={props.feature1ImageAlt}
-                            src={props.feature1ImageSrc}
-                            className="spark-content-feature1-image"
-                        />
-                    </div>
+                    {props.color ?? (
+                        <Fragment>
+                            <div className="spark-content-container1" >
+                                <img
+                                    alt={props.feature1ImageAlt}
+                                    src={props.feature1ImageSrc}
+                                    className="spark-content-feature1-image"
+                                />
+                            </div>
+                        </Fragment>
+                    )}
                     <div className="spark-content-container2">
                         <div className="spark-content-content">
                             <span>

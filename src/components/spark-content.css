@@ -90,6 +90,7 @@
 .spark-content-feature2-description4 {
     color: var(--dl-color-theme-neutral-light);
     display: inline-block;
+    flex-wrap: wrap;
 }
 
 @media(max-width: 991px) {
