@@ -104,12 +104,12 @@ const NavbarInteractive = (props) => {
                 </svg>
               </div>
             </div>
-            <nav className="navbar-interactive-links2">
+            {/* <nav className="navbar-interactive-links2">
               <span className="navbar-interactive-text13">
                 {props.text3 ?? (
                   <Fragment>
                     <span className="navbar-interactive-text24">
-                      <span className="navbar-interactive-text25">Forcast</span>
+                      <span className="navbar-interactive-text25">Forecast</span>
                       <br></br>
                     </span>
                   </Fragment>
@@ -135,7 +135,7 @@ const NavbarInteractive = (props) => {
                   </Fragment>
                 )}
               </span>
-            </nav>
+            </nav> */}
           </div>
           <div>
             <svg
