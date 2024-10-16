@@ -38,7 +38,7 @@ const NavbarInteractive = (props) => {
           data-thq="thq-navbar-nav"
           className="navbar-interactive-desktop-menu"
         >
-          {/* <nav className="navbar-interactive-links1">
+          {<nav className="navbar-interactive-links1">
             <span>
               {props.text ?? (
                 <Fragment>
@@ -60,7 +60,7 @@ const NavbarInteractive = (props) => {
                 </Fragment>
               )}
             </span>
-          </nav> */}
+          </nav>}
           <div className="navbar-interactive-buttons1">
             <form onSubmit={handleSearchSubmit}>
               <input
@@ -104,7 +104,7 @@ const NavbarInteractive = (props) => {
                 </svg>
               </div>
             </div>
-            {/* <nav className="navbar-interactive-links2">
+            <nav className="navbar-interactive-links2">
               <span className="navbar-interactive-text13">
                 {props.text3 ?? (
                   <Fragment>
@@ -135,7 +135,7 @@ const NavbarInteractive = (props) => {
                   </Fragment>
                 )}
               </span>
-            </nav> */}
+            </nav>
           </div>
           <div>
             <svg
