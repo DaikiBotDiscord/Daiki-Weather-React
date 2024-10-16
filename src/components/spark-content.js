@@ -38,7 +38,7 @@ const SparkContent = (props) => {
                                         <span className="spark-content-feature2-description3 thq-body-small">
                                             <span>Closest Strike in</span>
                                             <br></br>
-                                            <span>30 Minutes:</span>
+                                            <span>Past 30 Mins:</span>
                                             <br></br>
                                         </span>
                                     </Fragment>
