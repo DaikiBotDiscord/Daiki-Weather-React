@@ -55,7 +55,6 @@ const SparkContent = (props) => {
                                 )}
                             </h3>
                         </div>
-                        <div className="spark-content-container3"></div>
                         <div className="spark-content-container4">
                             <span>
                                 {props.feature2Description82 ?? (
