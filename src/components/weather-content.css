@@ -17,6 +17,7 @@
 
 .weather-content-feature1 {
   flex: 1;
+  align-items: self-start;
   flex-direction: row;
 }
 
