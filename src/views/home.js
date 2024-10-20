@@ -224,47 +224,52 @@ const Home = () => {
             />
           )}
 
-          {hasSearched && alertsData && alertsData.alerts.length > 0 ? (
-            alertsData.alerts.map((alert, index) => (
-              < AlertsContent
-                key={index}
-                color={<div className="alerts-content-container1" style={{ backgroundColor: 'red' }}>
-                  <img
-                    src="/alert-symbol-200h.png"
-                    alt="Alert Symbol"
-                    className="alerts-content-feature1-image"
-                  />
-                </div>}
-                heading={<span className='home-text112'>Alerts</span>}
-                feature2Title={<h3 className="alerts-content-feature2-description5 thq-body-small">
-                  <span dangerouslySetInnerHTML={{ __html: formatAlertHeadline(alert.event) }} />
-                  <br></br>
-                </h3>}
-                feature2Description={
-                  <span className="alerts-content-feature2-description6 thq-body-small">
-                    <span>Effective: {formatDate(alert.effective)} </span>
-                    <br></br>
-                  </span>
-                }
-                feature2Description1={
-                  <span className="alerts-content-feature2-description6 thq-body-small">
-                    <span>Expires: {formatDate(alert.expires)}</span>
-                    <br></br>
-                  </span>
-                }
-                feature2Description11={
-                  <span className='alerts-content-feature2-description7 thq-body-small'>
-                    <span>Instruction: </span> <span dangerouslySetInnerHTML={{ __html: formatAlertHeadline(alert.instruction) }} />
-                  </span>
-                }
-                feature2Description111={<span></span>}
-              />
-            ))
-          ) : (
-            <AlertsContentNoAlerts
-              heading={<span className='home-text112'>Alerts</span>}
-            />
-          )}
+          {hasSearched && alertsData ? (
+            alertsData.alerts && alertsData.alerts.length > 0 ? (
+              alertsData.alerts.map((alert, index) => (
+                <AlertsContent
+                  key={index}
+                  color={
+                    <div className="alerts-content-container1" style={{ backgroundColor: 'red' }}>
+                      <img
+                        src="/alert-symbol-200h.png"
+                        alt="Alert Symbol"
+                        className="alerts-content-feature1-image"
+                      />
+                    </div>
+                  }
+                  heading={<span className="home-text112">Alerts</span>}
+                  feature2Title={
+                    <h3 className="alerts-content-feature2-description5 thq-body-small">
+                      <span dangerouslySetInnerHTML={{ __html: formatAlertHeadline(alert.event) }} />
+                      <br />
+                    </h3>
+                  }
+                  feature2Description={
+                    <span className="alerts-content-feature2-description6 thq-body-small">
+                      <span>Effective: {formatDate(alert.effective)} </span>
+                      <br />
+                    </span>
+                  }
+                  feature2Description1={
+                    <span className="alerts-content-feature2-description6 thq-body-small">
+                      <span>Expires: {formatDate(alert.expires)}</span>
+                      <br />
+                    </span>
+                  }
+                  feature2Description11={
+                    <span className="alerts-content-feature2-description7 thq-body-small">
+                      <span>Instruction: </span>{' '}
+                      <span dangerouslySetInnerHTML={{ __html: formatAlertHeadline(alert.instruction) }} />
+                    </span>
+                  }
+                  feature2Description111={<span></span>}
+                />
+              ))
+            ) : (
+              <AlertsContentNoAlerts heading={<span className="home-text112">No Alerts</span>} />
+            )
+          ) : null}
         </div>
       </div>
     </div >
